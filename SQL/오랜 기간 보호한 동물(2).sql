@@ -1,0 +1,8 @@
+-- 코드를 입력하세요
+SELECT ai.ANIMAL_ID, ao.NAME
+-- , ao.DATETIME, ai.DATETIME
+-- , TIMESTAMPDIFF(SECOND, ai.DATETIME, ao.DATETIME)
+from ANIMAL_INS ai, ANIMAL_OUTS ao
+where ai.ANIMAL_ID = ao.ANIMAL_ID
+group by 1
+order by TIMESTAMPDIFF(SECOND, ai.DATETIME, ao.DATETIME) desc limit 2
